@@ -3,21 +3,16 @@
 require 'functions.php';
 // require 'router.php';
 
-//connect to MySQL datavase. PDO
+$dsn = "mysql:host=localhost;port=3306;dbname=myapp;user=root;charset=utf8mb4";
 
-class Person {
-  public $name;
-  public $age;
+// Tip: This should be wrapped in a try-catch. We'll learn how, soon.
+$pdo = new PDO($dsn);
 
-  public function  breathe() {
-    echo $this->name . ' is breathing';
-  }
+$statement = $pdo->prepare("select * from posts");
+$statement->execute();
+
+$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($posts as $post) {
+  echo "<li>". $post["title"] ."</li>";
 }
-
-$person = new Person();
-$person->name = "John Doe";
-$person->age = 25;
-$person->breathe();
-
-#dsn - data source name (post, host, dataset, charset)
-new PDO($dsn);
