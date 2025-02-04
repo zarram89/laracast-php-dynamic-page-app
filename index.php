@@ -1,6 +1,9 @@
 <?php
 
 require 'functions.php';
+
+sum(1, 2, true);
+dd();
 require 'Database.php';
 require 'router.php';
 
