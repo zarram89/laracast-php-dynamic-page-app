@@ -27,3 +27,15 @@ function abort($code = 404) {
 }
 
 routeToController($uri, $routes);
+?>
+```
+
+Lesson 16 Create a MySQL Database
+Создать базу данных в терминале
+`mysql -uroot`
+В mysql создаем базу данных
+`create database myapp`
+В 
+Host 127.0.0.1
+Port 3306
+

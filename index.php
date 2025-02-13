@@ -2,8 +2,8 @@
 
 require 'functions.php';
 
-sum(1, 2, true);
-dd();
+// sum(1, 2, true);
+// dd($_SERVER['REQUEST_URI']);
 require 'Database.php';
 require 'Response.php';
 require 'router.php';
